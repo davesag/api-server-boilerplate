@@ -4,10 +4,11 @@ A stripped down generic API boilerplate built around NodeJS and Swagger V3.
 
 ## Branches
 
-| Branch    | Tests                                                                                                                                                                 | Code Coverage                                                                                                                                           | Comments                  |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| `develop` | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Work in progress          |
-| `master`  | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master)   | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate)  | Latest Production Release |
+<!-- prettier-ignore -->
+| Branch | Tests | Code Coverage | Comments |
+| ------ | ----- | ------------- | -------- |
+| `develop` | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Work in progress |
+| `master`  | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Latest Production Release |
 
 ## Configuration
 
@@ -29,7 +30,7 @@ I write a lot of APIs and have distilled my current best-practice into this code
 
 Just clone it or fork it, nuke the existing `.git` data and replace with your own `git init` and `git flow init` edit the `README.md` file, add your own details to `api.yml` and add routes to `src/api/` as you like.
 
-## What is in this
+### What's included?
 
 - a single API route and simple controller (`src/api/v1/ping`)
 - support for asynchronous routes via [`route-async`](https://github.com/davesag/route-async)
@@ -40,7 +41,7 @@ Just clone it or fork it, nuke the existing `.git` data and replace with your ow
 - the swagger editor as an easy to invoke docker image
 - [`dotenv`](https://github.com/motdotla/dotenv) support
 
-## What's not in this
+### What's not included?
 
 Heaps. I've paired this right back to the simplest, most generic API I could, so there's no
 
@@ -51,7 +52,7 @@ Heaps. I've paired this right back to the simplest, most generic API I could, so
 - sockets or event listeners
 - databases, search systems, etc
 
-### Code Quality
+### Code quality
 
 - unit testing via [`mocha`](https://mochajs.org), [`sinon`](https://sinonjs.org), [`chai`](https://www.chaijs.com), and [`proxyquire`](https://github.com/thlorenz/proxyquire)
 - `request` and `response` mocks using [`mock-req-res`](https://github.com/davesag/mock-req-res)
@@ -62,6 +63,11 @@ Heaps. I've paired this right back to the simplest, most generic API I could, so
 - [`greenkeeper`](https://greenkeeper.io) integration
 
 ## Development
+
+### Prerequisites
+
+- [NodeJS](htps://nodejs.org), version 10.15.3 (LTS) or better. (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+- [Docker](https://www.docker.com) if you want to use the Swagger Editor. (Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the `homebrew` version)
 
 ### To build and run locally
 

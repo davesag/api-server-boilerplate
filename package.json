@@ -62,7 +62,8 @@
   },
   "prettier": {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "proseWrap": false
   },
   "husky": {
     "hooks": {
