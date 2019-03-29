@@ -29,16 +29,6 @@ I write a lot of APIs and have distilled my current best-practice into this code
 
 Just clone it or fork it, nuke the existing `.git` data and replace with your own `git init` and `git flow init` edit the `README.md` file, add your own details to `api.yml` and add routes to `src/api/` as you like.
 
-## What's not in this
-
-Heaps. I've paired this right back to the simplest, most generic API I could, so there's no
-
-- authentication (add `passport` and update `src/utils/makeApp` and add appropriate security blocks to `api.yml`)
-- middleware (roll your own and update `src/utils/makeApp`)
-- monitoring
-- sockets or event listeners
-- databases, search systems, etc
-
 ## What is in this
 
 - a single API route and simple controller (`src/api/v1/ping`)
@@ -49,6 +39,17 @@ Heaps. I've paired this right back to the simplest, most generic API I could, so
 - standardised [`node-http-error`](https://github.com/carsondarling/node-http-error) and [`http-status-codes`](https://github.com/prettymuchbryce/http-status-codes) and simple `generic` and `notFound` error handlers
 - the swagger editor as an easy to invoke docker image
 - [`dotenv`](https://github.com/motdotla/dotenv) support
+
+## What's not in this
+
+Heaps. I've paired this right back to the simplest, most generic API I could, so there's no
+
+- authentication (add `passport` and update `src/utils/makeApp` and add appropriate security blocks to `api.yml`)
+- rate limiting
+- middleware (roll your own and update `src/utils/makeApp`)
+- monitoring
+- sockets or event listeners
+- databases, search systems, etc
 
 ### Code Quality
 
