@@ -7,7 +7,7 @@ const {
   }
 } = require('src/utils/api/apiDefinition')
 
-describe('GET /api/v1/ping', () => {
+describe('GET /ping', () => {
   let server
 
   before(() => {
@@ -16,7 +16,7 @@ describe('GET /api/v1/ping', () => {
 
   it('returns an Okay result and status code 200', done => {
     request(server)
-      .get('/api/v1/ping')
+      .get('/ping')
       .end((err, res) => {
         expect(err).to.not.exist
         expect(res.statusCode).to.equal(200)

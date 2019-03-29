@@ -63,7 +63,7 @@
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "proseWrap": false
+    "proseWrap": "never"
   },
   "husky": {
     "hooks": {

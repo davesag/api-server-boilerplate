@@ -17,8 +17,8 @@ const mockApiDefinition = {
   '@noCallThru': true
 }
 
-describe('src/api/v1/ping', () => {
-  const ping = proxyquire('src/api/v1/ping', {
+describe('src/api/ping', () => {
+  const ping = proxyquire('src/api/ping', {
     'src/utils/uptime': mockUptime,
     'src/utils/api/apiDefinition': mockApiDefinition
   })

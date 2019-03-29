@@ -10,11 +10,35 @@ info:
   version: 1.0.0
 servers:
 - url: /api/v1
+tags:
+- name: root
+  description: Root level API paths
+- name: v1
+  description: Version 1 API Paths
 paths:
+  /:
+    get:
+      tags:
+      - root
+      servers:
+      - url: /
+      summary: Display API version information
+      operationId: versions
+      responses:
+        200:
+          description: Information about the available API Versions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VersionResponse'
   /ping:
     get:
+      tags:
+      - root
+      servers:
+      - url: /
       summary: Checks that the server is alive
-      operationId: v1/ping
+      operationId: ping
       responses:
         200:
           description: 'Information about the server'
@@ -22,7 +46,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PingResponse'
+  /hello/{name}:
+    get:
+      tags:
+      - v1
+      summary: Say hello to the name provided
+      operationId: v1/hello
+      parameters:
+        - in: path
+          name: name
+          description: 'The name to say hello to'
+          schema:
+            type: string
+          required: true
+      responses:
+        200:
+          description: 'Just says hello'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HelloWorldResponse'
+        400:
+          description: 'Bad request —Invalid name supplied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 components:
+  schemas:
     PingResponse:
       type: object
       properties:
@@ -34,3 +85,24 @@ components:
           type: string
         uptime:
           type: number
+    APIVersion:
+      type: object
+      properties:
+        version:
+          type: integer
+          description: The API's version number
+        path:
+          type: string
+          description: The relative path to the API
+    VersionResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/APIVersion'
+    HelloWorldResponse:
+      type: string
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: The error message
