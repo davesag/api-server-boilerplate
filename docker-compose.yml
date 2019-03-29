@@ -1,0 +1,9 @@
+version: '2.2'
+
+services:
+  swagger:
+    image: swaggerapi/swagger-editor
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: "exit 0"

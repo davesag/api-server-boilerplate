@@ -1,0 +1,36 @@
+openapi: 3.0.1
+info:
+  title: Dave's Boilerplate API
+  description: A boilerplate API codebase
+  contact:
+    email: 'davesag@gmail.com'
+  license:
+    name: 'MIT License'
+    url: https://opensource.org/licenses/MIT
+  version: 1.0.0
+servers:
+- url: /api/v1
+paths:
+  /ping:
+    get:
+      summary: Checks that the server is alive
+      operationId: v1/ping
+      responses:
+        200:
+          description: 'Information about the server'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PingResponse'
+components:
+    PingResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        version:
+          type: string
+        uptime:
+          type: number
