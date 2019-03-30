@@ -8,7 +8,7 @@ A stripped down generic API boilerplate built around NodeJS and Swagger V3.
 | Branch | Tests | Code Coverage | Comments |
 | ------ | ----- | ------------- | -------- |
 | `develop` | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Work in progress |
-| `master`  | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Latest Production Release |
+| `master`  | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) [![Greenkeeper badge](https://badges.greenkeeper.io/davesag/api-server-boilerplate.svg)](https://greenkeeper.io/) | Latest Production Release |
 
 ## Configuration
 
