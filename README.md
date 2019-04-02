@@ -121,6 +121,7 @@ Copy and paste the `api.yml` file into the editor to edit it.
 - `npm run lint` will lint it
 - `npm run prettier` will prettify it
 - `npm run test:unit:cov` will run the unit tests with code coverage
+- `npm run test:mutants` will run the unit tests with mutation testing
 
 ## Contributing
 

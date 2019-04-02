@@ -18,7 +18,8 @@
     "test:all": "npm run test:unit; npm run test:integration",
     "test:server": "find ./test/server -name '*.test.js' | NODE_ENV=test NODE_PATH=. OFFLINE=true xargs mocha --require ./test/server/testHelper.js --bail",
     "test:unit": "find ./test/unit -name '*.test.js' | NODE_ENV=test NODE_PATH=. xargs mocha --require ./test/unit/testHelper.js",
-    "test:unit:cov": "find ./test/unit -name '*.test.js' | NODE_ENV=test NODE_PATH=. xargs nyc mocha --require ./test/unit/testHelper.js"
+    "test:unit:cov": "find ./test/unit -name '*.test.js' | NODE_ENV=test NODE_PATH=. xargs nyc mocha --require ./test/unit/testHelper.js",
+    "test:mutants": "NODE_ENV=test NODE_PATH=. npx stryker run"
   },
   "keywords": [
     "swagger",
@@ -71,6 +72,10 @@
     }
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^1.1.1",
+    "@stryker-mutator/javascript-mutator": "^1.1.1",
+    "@stryker-mutator/mocha-framework": "^1.1.1",
+    "@stryker-mutator/mocha-runner": "^1.1.1",
     "chai": "^4.2.0",
     "chai-almost": "^1.0.1",
     "chai-as-promised": "^7.1.1",

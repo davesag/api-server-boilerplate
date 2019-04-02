@@ -1,0 +1,19 @@
+module.exports = function(config) {
+  config.set({
+    mutate: [
+      'src/**/*.js',
+      '!src/index.js',
+      '!src/utils/api/apiValidator.js',
+      '!src/utils/config.js',
+      '!src/utils/logger.js'
+    ],
+    mutator: 'javascript',
+    packageManager: 'npm',
+    reporters: ['clear-text', 'progress'],
+    testRunner: 'mocha',
+    transpilers: [],
+    testFramework: 'mocha',
+    coverageAnalysis: 'perTest',
+    thresholds: { high: 80, low: 70, break: null }
+  })
+}
