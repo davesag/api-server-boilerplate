@@ -64,11 +64,15 @@ describe('src/utils/makeApp', () => {
     expect(mockUse).to.have.been.calledWith('json-parser')
   })
 
-  it('creates the api validatior', () => {
+  it('creates the api validator', () => {
     expect(mockApiValidator).to.have.been.called
   })
 
-  it('uses the api validatior', () => {
+  it('sets trust proxy to true', () => {
+    expect(mockSet).to.have.been.calledWith('trust proxy', true)
+  })
+
+  it('uses the api validator', () => {
     expect(mockUse).to.have.been.calledWith('api-validator')
   })
 

@@ -54,6 +54,11 @@ jobs:
             npm run test:server
 
       - run:
+          name: Mutation Tests
+          command:
+            npm run test:mutants
+
+      - run:
           name: Push any lockfile changes
           command: greenkeeper-lockfile-upload
 
