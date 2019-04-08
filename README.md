@@ -22,13 +22,15 @@ Set the following environment variables
 
 ## API Routes
 
-There's a single API route, `/api/v1/ping` that simply returns some information about the server.
-
 If it's running locally (see below) point a browser at any of the following routes:
 
 - [localhost:8282](http://127.0.0.1:8282)
 - [localhost:8282/ping](http://127.0.0.1:8282/ping)
 - [localhost:8282/api/v1/hello/some name](http://127.0.0.1:8282/api/v1/hello/some%20name)
+
+and see the API docs at
+
+- [localhost:8282/docs](http://127.0.0.1:8282/docs)
 
 ## What's the point of this?
 
