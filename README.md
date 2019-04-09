@@ -83,6 +83,7 @@ Heaps. I've paired this right back to the simplest, most generic API I could, so
 - 100% unit test coverage using [`nyc`](https://github.com/istanbuljs/nyc)
 - integration testing using [`supertest`](https://github.com/visionmedia/supertest)
 - code quality using [`eslint`](https://eslint.org) and [`prettier`](https://prettier.io)
+- mutation testing with [`stryker-mutator`](https://stryker-mutator.io)
 - [`circleci`](https://circleci.com) integration
 - [`greenkeeper`](https://greenkeeper.io) integration
 
