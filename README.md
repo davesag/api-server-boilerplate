@@ -40,7 +40,7 @@ I write a lot of APIs and have distilled my current best-practice into this code
 
 Just clone it or fork it, nuke the existing `.git` data and replace with your own `git init` and `git flow init` edit the `README.md` file, add your own details to `api.yml` and add routes to `src/api/` as you like.
 
-### What's included?
+## What's included?
 
 - a couple of root-level API routes and simple controllers
 
@@ -58,18 +58,6 @@ Just clone it or fork it, nuke the existing `.git` data and replace with your ow
 - the swagger editor as an easy to invoke docker image
 - [`dotenv`](https://github.com/motdotla/dotenv) support
 
-### What's not included?
-
-Heaps. I've paired this right back to the simplest, most generic API I could, so there's no
-
-- authentication (add `passport` and update `src/utils/makeApp` and add appropriate security blocks to `api.yml`)
-- example of an asynchronous route via [`route-async`](https://github.com/davesag/route-async)
-- rate limiting
-- middleware (roll your own and update `src/utils/makeApp`)
-- monitoring
-- sockets or event listeners
-- databases, search systems, etc
-
 ### Code quality
 
 - unit testing using
@@ -86,6 +74,18 @@ Heaps. I've paired this right back to the simplest, most generic API I could, so
 - mutation testing with [`stryker-mutator`](https://stryker-mutator.io)
 - [`circleci`](https://circleci.com) integration
 - [`greenkeeper`](https://greenkeeper.io) integration
+
+## What's not included?
+
+I've paired this right back to the simplest, most generic API I could, so there's no
+
+- authentication (add `passport` and update `src/utils/makeApp` and add appropriate security blocks to `api.yml`)
+- example of an asynchronous route via [`route-async`](https://github.com/davesag/route-async)
+- rate limiting
+- middleware (roll your own and update `src/utils/makeApp`)
+- monitoring
+- sockets or event listeners
+- databases, search systems, etc
 
 ## Development
 
