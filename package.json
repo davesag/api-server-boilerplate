@@ -1,6 +1,6 @@
 {
   "name": "@davesag/api-server-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dave Sag's boilerplate code for a swagger based API server",
   "main": "index.js",
   "engines": {
@@ -11,7 +11,6 @@
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint .",
     "prettier": "prettier --write '**/*.{js,json,md}'",
-    "seed": "NODE_PATH=. node tasks/seed",
     "start": "NODE_PATH=. node index.js",
     "swagger": "docker-compose up -d swagger",
     "test": "npm run test:unit",
