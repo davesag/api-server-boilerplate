@@ -1,12 +1,12 @@
 const { expect } = require('chai')
-const sinon = require('sinon')
+const { stub, match } = require('sinon')
 const proxyquire = require('proxyquire')
 
 const mockLogger = require('test/utils/mockLogger')
 
 describe('src/utils/api/apiValidator', () => {
   const logger = mockLogger()
-  const validator = sinon.stub()
+  const validator = stub()
   const apiValidator = proxyquire('src/utils/api/apiValidator', {
     'swagger-express-validator': validator,
     'src/utils/logger': logger
@@ -20,7 +20,7 @@ describe('src/utils/api/apiValidator', () => {
 
   it('called validator', () => {
     expect(validator).to.have.been.calledWith(
-      sinon.match({
+      match({
         schema,
         validateRequest: true,
         validateResponse: true
