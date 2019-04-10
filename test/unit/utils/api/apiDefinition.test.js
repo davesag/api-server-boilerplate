@@ -8,11 +8,6 @@ describe('src/utils/api/apiDefinition', () => {
   const fakeSummary = { ...fakeDoc, summary: true }
   const mockSummarise = stub().returns(fakeSummary)
 
-  const resetStubs = () => {
-    mockYAML.load.resetHistory()
-    mockSummarise.resetHistory()
-  }
-
   let apiDefinition
   let apiSummary
 
@@ -25,8 +20,6 @@ describe('src/utils/api/apiDefinition', () => {
       }
     ))
   })
-
-  after(resetStubs)
 
   it('loads the api doc', () => {
     expect(mockYAML.load).to.have.been.calledWith('api.yml')

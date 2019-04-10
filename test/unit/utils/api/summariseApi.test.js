@@ -1,5 +1,5 @@
 const { expect } = require('chai')
-const { match, restore, stub } = require('sinon')
+const { match, stub } = require('sinon')
 const proxyquire = require('proxyquire')
 
 const fakePaths = require('test/utils/fakePaths')
@@ -102,10 +102,6 @@ describe('src/utils/api/summariseApi', () => {
   before(() => {
     summarise.returns(paths)
     result = summariseApi(fakeApi)
-  })
-
-  after(() => {
-    restore()
   })
 
   it('called summarisePaths', () => {

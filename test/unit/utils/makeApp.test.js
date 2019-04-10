@@ -1,11 +1,11 @@
 const { expect } = require('chai')
-const sinon = require('sinon')
+const { stub, spy } = require('sinon')
 const proxyquire = require('proxyquire').noCallThru()
 
 describe('src/utils/makeApp', () => {
   const fakeCors = 'cors'
   const fakeBodyParser = {
-    json: sinon.stub().returns('json-parser')
+    json: stub().returns('json-parser')
   }
 
   const fakeErrorHandler = 'errorHandler'
@@ -14,13 +14,13 @@ describe('src/utils/makeApp', () => {
     apiDefinition: { test: 'just a test' },
     '@noCallThru': true
   }
-  const mockApiValidator = sinon.stub().returns('api-validator')
-  const mockConnect = sinon.spy()
+  const mockApiValidator = stub().returns('api-validator')
+  const mockConnect = spy()
   const mockApiConnector = () => mockConnect
-  const mockCors = sinon.stub().returns(fakeCors)
+  const mockCors = stub().returns(fakeCors)
   const fakeNotFoundError = 'not found error'
-  const mockUse = sinon.spy()
-  const mockSet = sinon.spy()
+  const mockUse = spy()
+  const mockSet = spy()
   const fakeExpress = () => ({
     use: mockUse,
     set: mockSet
@@ -37,22 +37,11 @@ describe('src/utils/makeApp', () => {
     'src/utils/genericErrors': fakeErrorHandler
   })
 
-  const resetStubs = () => {
-    fakeBodyParser.json.resetHistory()
-    mockCors.resetHistory()
-    mockUse.resetHistory()
-    mockSet.resetHistory()
-    mockApiValidator.resetHistory()
-    mockConnect.resetHistory()
-  }
-
   let app
 
   before(async () => {
     app = await makeApp()
   })
-
-  after(resetStubs)
 
   it('uses cors', () => {
     expect(mockCors).to.have.been.calledOnce

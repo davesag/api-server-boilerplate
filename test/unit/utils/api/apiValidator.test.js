@@ -1,20 +1,16 @@
 const { expect } = require('chai')
-const sinon = require('sinon')
+const { stub, match } = require('sinon')
 const proxyquire = require('proxyquire')
 
 const mockLogger = require('test/utils/mockLogger')
 
 describe('src/utils/api/apiValidator', () => {
-  const mockValidator = sinon.stub()
+  const logger = mockLogger()
+  const validator = stub()
   const apiValidator = proxyquire('src/utils/api/apiValidator', {
-    'swagger-express-validator': mockValidator,
-    'src/utils/logger': mockLogger
+    'swagger-express-validator': validator,
+    'src/utils/logger': logger
   })
-
-  const resetStubs = () => {
-    mockLogger.error.resetHistory()
-    mockValidator.resetHistory()
-  }
 
   const schema = 'some-schema'
 
@@ -22,11 +18,9 @@ describe('src/utils/api/apiValidator', () => {
     apiValidator(schema)
   })
 
-  after(resetStubs)
-
   it('called validator', () => {
-    expect(mockValidator).to.have.been.calledWith(
-      sinon.match({
+    expect(validator).to.have.been.calledWith(
+      match({
         schema,
         validateRequest: true,
         validateResponse: true
