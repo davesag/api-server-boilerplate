@@ -31,15 +31,9 @@ describe('src/api/ping', () => {
     uptime: fakeUptime
   }
 
-  const resetStubs = () => {
-    res.json.resetHistory()
-  }
-
   before(() => {
     ping(req, res)
   })
-
-  after(resetStubs)
 
   it('calls res.json with the correct data', () => {
     expect(res.json).to.have.been.calledWith(expected)

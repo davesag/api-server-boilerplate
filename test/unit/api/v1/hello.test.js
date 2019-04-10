@@ -6,10 +6,6 @@ const hello = require('src/api/v1/hello')
 describe('src/api/v1/hello', () => {
   const res = mockResponse()
 
-  const resetStubs = () => {
-    res.json.resetHistory()
-  }
-
   context('when a valid name is provided', () => {
     const name = 'Dave Sag'
     const req = mockRequest({ params: { name } })
@@ -18,8 +14,6 @@ describe('src/api/v1/hello', () => {
     before(() => {
       hello(req, res)
     })
-
-    after(resetStubs)
 
     it('calls res.json with the correct data', () => {
       expect(res.json).to.have.been.calledWith(expected)

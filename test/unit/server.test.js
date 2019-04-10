@@ -5,12 +5,13 @@ const proxyquire = require('proxyquire')
 const mockLogger = require('test/utils/mockLogger')
 
 describe('src/server', () => {
+  const logger = mockLogger()
   const mockApp = { listen: stub() }
   const mockMakeApp = stub()
 
   const server = proxyquire('src/server', {
     'src/utils/makeApp': mockMakeApp,
-    'src/utils/logger': mockLogger
+    'src/utils/logger': logger
   })
 
   const mockServer = 'a server'
@@ -21,12 +22,6 @@ describe('src/server', () => {
     mockMakeApp.resolves(mockApp)
     mockApp.listen.resolves(mockServer)
     outcome = await server.start()
-  })
-
-  after(() => {
-    mockMakeApp.resetHistory()
-    mockApp.listen.resetHistory()
-    mockLogger.debug.resetHistory()
   })
 
   it('invoked app.listen', () => {
