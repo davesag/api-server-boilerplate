@@ -9,9 +9,9 @@ const start = async () => {
     logger.debug('Server started. Listening on port', PORT)
 
     return { server }
-  } catch (err) /* istanbul ignore next */ {
+  } catch (err) {
     logger.error('Could not start the server', err)
-    process.exit(1)
+    throw err
   }
 }
 

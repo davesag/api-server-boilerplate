@@ -25,12 +25,15 @@ describe('src/utils/makeApp', () => {
     use: mockUse,
     set: mockSet
   })
+  const fakeUI = 'some UI thing'
+  const mockUiExpress = { setup: stub().returns(fakeUI), serve: stub() }
 
   const makeApp = proxyquire('src/utils/makeApp', {
     express: fakeExpress,
     cors: mockCors,
     'body-parser': fakeBodyParser,
     'swagger-routes-express': mockApiConnector,
+    'swagger-ui-express': mockUiExpress,
     'src/utils/notFoundError': fakeNotFoundError,
     'src/utils/api/apiDefinition': fakeApiDefinition,
     'src/utils/api/apiValidator': mockApiValidator,
@@ -47,18 +50,30 @@ describe('src/utils/makeApp', () => {
     expect(mockCors).to.have.been.calledOnce
     expect(mockUse).to.have.been.calledWith(fakeCors)
   })
+  //  app.use('/docs', swaggerUi.serve, swaggerUi.setup(apiDefinition))
+
+  it('uses docs', () => {
+    expect(mockUiExpress.setup).to.have.been.calledOnceWith(
+      fakeApiDefinition.apiDefinition
+    )
+    expect(mockUse).to.have.been.calledWith(
+      '/docs',
+      mockUiExpress.serve,
+      fakeUI
+    )
+  })
 
   it('uses bodyParser.json', () => {
     expect(fakeBodyParser.json).to.have.been.calledOnce
     expect(mockUse).to.have.been.calledWith('json-parser')
   })
 
-  it('creates the api validator', () => {
-    expect(mockApiValidator).to.have.been.called
-  })
-
   it('sets trust proxy to true', () => {
     expect(mockSet).to.have.been.calledWith('trust proxy', true)
+  })
+
+  it('creates the api validator', () => {
+    expect(mockApiValidator).to.have.been.called
   })
 
   it('uses the api validator', () => {
