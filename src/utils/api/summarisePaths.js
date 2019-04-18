@@ -1,10 +1,9 @@
+const detailSummariser = require('./detailSummariser')
+
 const normalisePath = path => path.replace(/\{/g, ':').replace(/\}/g, '')
 
-const detailSummariser = (paths, basePath) => (path, { tags }) =>
-  tags && tags.length !== 0 && tags[0] === 'root' ? path : `${basePath}${path}`
-
 const pathSummariser = (paths, basePath, result) => {
-  const summariser = detailSummariser(paths, basePath)
+  const summariser = detailSummariser(basePath)
 
   return path => {
     const thePath = paths[path]
