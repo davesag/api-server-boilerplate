@@ -29,6 +29,14 @@
   ],
   "author": "Dave Sag <davesag@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davesag/api-server-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davesag/api-server-boilerplate/issues"
+  },
+  "homepage": "https://github.com/davesag/api-server-boilerplate#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -43,10 +51,10 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "@stryker-mutator/core": "^1.3.0",
-    "@stryker-mutator/javascript-mutator": "^1.3.0",
-    "@stryker-mutator/mocha-framework": "^1.3.0",
-    "@stryker-mutator/mocha-runner": "^1.3.0",
+    "@stryker-mutator/core": "^1.3.1",
+    "@stryker-mutator/javascript-mutator": "^1.3.1",
+    "@stryker-mutator/mocha-framework": "^1.3.1",
+    "@stryker-mutator/mocha-runner": "^1.3.1",
     "chai": "^4.2.0",
     "chai-almost": "^1.0.1",
     "chai-as-promised": "^7.1.1",
