@@ -6,7 +6,7 @@ const { mockRequest, mockResponse } = require('mock-req-res')
 const fakeUptime = 100
 const mockUptime = () => fakeUptime
 
-const mockApiDefinition = {
+const apiDetails = {
   apiSummary: {
     info: {
       name: 'test',
@@ -20,14 +20,14 @@ const mockApiDefinition = {
 describe('src/api/ping', () => {
   const ping = proxyquire('src/api/ping', {
     'src/utils/uptime': mockUptime,
-    'src/utils/api/apiDetails': mockApiDefinition
+    'src/utils/api/apiDetails': apiDetails
   })
 
   const req = mockRequest()
   const res = mockResponse()
 
   const expected = {
-    ...mockApiDefinition.apiSummary.info,
+    ...apiDetails.apiSummary.info,
     uptime: fakeUptime
   }
 
