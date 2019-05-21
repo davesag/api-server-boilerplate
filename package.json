@@ -46,7 +46,7 @@
     "node-http-error": "^2.0.0",
     "swagger-express-validator": "^1.0.0",
     "swagger-routes-express": "^3.0.1",
-    "swagger-ui-express": "^4.0.3",
+    "swagger-ui-express": "^4.0.4",
     "traverse-folders": "^1.1.0",
     "yamljs": "^0.3.0"
   },
@@ -70,7 +70,7 @@
     "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
     "mocha": "^6.1.4",
-    "mock-req-res": "^1.1.0",
+    "mock-req-res": "^1.1.1",
     "nyc": "^14.1.1",
     "prettier": "^1.17.1",
     "proxyquire": "^2.1.0",
