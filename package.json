@@ -1,11 +1,10 @@
 {
   "name": "@davesag/api-server-boilerplate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dave Sag's boilerplate code for a swagger based API server",
   "main": "index.js",
   "engines": {
-    "node": ">= 10.15.3",
-    "npm": ">= 6.5.0"
+    "node": ">= 8.10.0"
   },
   "scripts": {
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
