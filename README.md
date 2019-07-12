@@ -41,6 +41,10 @@ Just clone it or fork it, nuke the existing `.git` data and replace with your ow
 
   - `src/api/v1/hello`
 
+- example of an asynchronous route using [`route-async`](https://github.com/davesag/route-async)
+
+  - `src/api/v1/snooze`
+
 - automatic linking of swagger paths to controllers using [`swagger-routes-express`](https://github.com/davesag/swagger-routes-express) and [`traverse-folders`](https://github.com/davesag/traverse-folders)
 - automatic generation of API docs using [`swagger-ui-express`](https://github.com/scottie1984/swagger-ui-express)
 - simple logging (swap out the code in `src/utils/logger` to add your own)
@@ -70,7 +74,6 @@ Just clone it or fork it, nuke the existing `.git` data and replace with your ow
 I've paired this right back to the simplest, most generic API I could, so there's no
 
 - authentication (add `passport` and update `src/utils/makeApp` and add appropriate security blocks to `api.yml`)
-- example of an asynchronous route via [`route-async`](https://github.com/davesag/route-async)
 - rate limiting
 - middleware (roll your own and update `src/utils/makeApp`)
 - monitoring
