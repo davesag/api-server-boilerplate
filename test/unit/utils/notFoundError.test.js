@@ -9,16 +9,9 @@ describe('src/utils/notFoundError', () => {
   const res = mockResponse()
   const req = mockRequest()
 
-  const resetStubs = () => {
-    res.status.resetHistory()
-    res.json.resetHistory()
-  }
-
   before(() => {
     notFoundError(req, res)
   })
-
-  after(resetStubs)
 
   it('called res.status with NOT_FOUND status', () => {
     expect(res.status).to.have.been.calledWith(NOT_FOUND)

@@ -1,5 +1,5 @@
 const { expect } = require('chai')
-const sinon = require('sinon')
+const { stub, resetHistory } = require('sinon')
 const proxyquire = require('proxyquire')
 const { mockRequest, mockResponse } = require('mock-req-res')
 const HttpError = require('node-http-error')
@@ -9,21 +9,15 @@ const mockLogger = require('test/utils/mockLogger')
 const ERRORS = require('src/errors')
 
 describe('src/utils/genericErrors', () => {
+  const logger = mockLogger()
   const genericErrors = proxyquire('src/utils/genericErrors', {
-    'src/utils/logger': mockLogger
+    'src/utils/logger': logger
   })
 
   const status = BAD_REQUEST
   const error = new HttpError(status, 'oops')
   const res = mockResponse()
-  const next = sinon.stub()
-
-  const resetStubs = () => {
-    next.resetHistory()
-    mockLogger.error.resetHistory()
-    res.status.resetHistory()
-    res.json.resetHistory()
-  }
+  const next = stub()
 
   context('when other error headers have already been sent', () => {
     before(() => {
@@ -31,7 +25,7 @@ describe('src/utils/genericErrors', () => {
       genericErrors(error, null, res, next)
     })
 
-    after(resetStubs)
+    after(resetHistory)
 
     it('called next with the error', () => {
       expect(next).to.have.been.calledOnce
@@ -59,12 +53,12 @@ describe('src/utils/genericErrors', () => {
         genericErrors(error, req, res, next)
       })
 
-      after(resetStubs)
+      after(resetHistory)
 
       it('calls logger.error with the ERRORS.GENERIC_ERROR', () => {
-        expect(mockLogger.error).to.have.been.calledOnce
-        expect(mockLogger.error.args[0][0]).to.equal(ERRORS.GENERIC_ERROR())
-        expect(mockLogger.error.args[0][1]).to.deep.equal(error)
+        expect(logger.error).to.have.been.calledOnce
+        expect(logger.error.args[0][0]).to.equal(ERRORS.GENERIC_ERROR())
+        expect(logger.error.args[0][1]).to.deep.equal(error.message)
       })
 
       it('calls res.status with the status', () => {
@@ -83,13 +77,11 @@ describe('src/utils/genericErrors', () => {
         genericErrors(error, req, res, next)
       })
 
-      after(resetStubs)
+      after(resetHistory)
 
       it('calls logger.error with the ERRORS.GENERIC_ERROR', () => {
-        expect(mockLogger.error).to.have.been.calledOnce
-        expect(mockLogger.error.args[0][0]).to.equal(
-          ERRORS.GENERIC_ERROR('test')
-        )
+        expect(logger.error).to.have.been.calledOnce
+        expect(logger.error.args[0][0]).to.equal(ERRORS.GENERIC_ERROR('test'))
       })
 
       it('calls res.status with the status', () => {
@@ -110,14 +102,14 @@ describe('src/utils/genericErrors', () => {
         genericErrors(genericError, req, res, next)
       })
 
-      after(resetStubs)
+      after(resetHistory)
 
       it('calls logger.error with the ERRORS.GENERIC_ERROR', () => {
-        expect(mockLogger.error).to.have.been.calledOnce
-        expect(mockLogger.error.args[0][0]).to.equal(
+        expect(logger.error).to.have.been.calledOnce
+        expect(logger.error.args[0][0]).to.equal(
           ERRORS.GENERIC_ERROR('test', parent.name)
         )
-        expect(mockLogger.error.args[0][1]).to.deep.equal(genericError)
+        expect(logger.error.args[0][1]).to.deep.equal(genericError.message)
       })
 
       it('calls res.status with INTERNAL_SERVER_ERROR', () => {

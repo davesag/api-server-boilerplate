@@ -14,15 +14,9 @@ describe('src/api/versions', () => {
     }
   ]
 
-  const resetStubs = () => {
-    res.json.resetHistory()
-  }
-
   before(() => {
     versions(req, res)
   })
-
-  after(resetStubs)
 
   it('calls res.json with the correct data', () => {
     expect(res.json).to.have.been.calledWith(expected)

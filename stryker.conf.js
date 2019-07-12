@@ -3,14 +3,19 @@ module.exports = function(config) {
     mutate: [
       'src/**/*.js',
       '!src/index.js',
+      '!src/errors.js',
       '!src/utils/api/apiValidator.js',
       '!src/utils/config.js',
       '!src/utils/logger.js'
     ],
     mutator: 'javascript',
     packageManager: 'npm',
-    reporters: ['clear-text', 'progress'],
+    reporters: ['clear-text'],
     testRunner: 'mocha',
+    mochaOptions: {
+      spec: ['./test/unit/**/*.test.js'],
+      require: ['./test/unitTestHelper.js']
+    },
     transpilers: [],
     testFramework: 'mocha',
     coverageAnalysis: 'perTest',

@@ -1,16 +1,6 @@
 # api-server-boilerplate
 
-A stripped down generic API boilerplate built around NodeJS and Swagger V3.
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/davesag/api-server-boilerplate.svg)](https://greenkeeper.io/)
-
-## Branches
-
-<!-- prettier-ignore -->
-| Branch | Tests | Code Coverage | Comments |
-| ------ | ----- | ------------- | -------- |
-| `develop` | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Work in progress |
-| `master`  | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Latest Production Release |
+A stripped down API boilerplate built around NodeJS and Swagger V3.
 
 ## Configuration
 
@@ -51,6 +41,10 @@ Just clone it or fork it, nuke the existing `.git` data and replace with your ow
 
   - `src/api/v1/hello`
 
+- example of an asynchronous route using [`route-async`](https://github.com/davesag/route-async)
+
+  - `src/api/v1/snooze`
+
 - automatic linking of swagger paths to controllers using [`swagger-routes-express`](https://github.com/davesag/swagger-routes-express) and [`traverse-folders`](https://github.com/davesag/traverse-folders)
 - automatic generation of API docs using [`swagger-ui-express`](https://github.com/scottie1984/swagger-ui-express)
 - simple logging (swap out the code in `src/utils/logger` to add your own)
@@ -80,7 +74,6 @@ Just clone it or fork it, nuke the existing `.git` data and replace with your ow
 I've paired this right back to the simplest, most generic API I could, so there's no
 
 - authentication (add `passport` and update `src/utils/makeApp` and add appropriate security blocks to `api.yml`)
-- example of an asynchronous route via [`route-async`](https://github.com/davesag/route-async)
 - rate limiting
 - middleware (roll your own and update `src/utils/makeApp`)
 - monitoring
@@ -89,9 +82,19 @@ I've paired this right back to the simplest, most generic API I could, so there'
 
 ## Development
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/davesag/api-server-boilerplate.svg)](https://greenkeeper.io/)
+
+### Branches
+
+<!-- prettier-ignore -->
+| Branch | Tests | Code Coverage | Comments |
+| ------ | ----- | ------------- | -------- |
+| `develop` | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Work in progress |
+| `master`  | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Latest Production Release |
+
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), version 10.15.3 (LTS) or better. (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+- [NodeJS](htps://nodejs.org), version 10.16.0 (LTS) or better. (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 - [Docker](https://www.docker.com) if you want to use the Swagger Editor. (Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the `homebrew` version)
 
 ### To build and run locally
