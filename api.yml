@@ -72,6 +72,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+  /snooze:
+    get:
+      tags:
+      - v1
+      summary: Just wait a bit
+      operationId: v1/snooze
+      responses:
+        200:
+          description: 'Okay'
 components:
   schemas:
     PingResponse:
