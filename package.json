@@ -1,6 +1,6 @@
 {
   "name": "@davesag/api-server-boilerplate",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Dave Sag's boilerplate code for a swagger based API server",
   "main": "index.js",
   "engines": {
@@ -44,7 +44,7 @@
     "http-status-codes": "^1.3.2",
     "node-http-error": "^2.0.0",
     "route-async": "^1.0.5",
-    "swagger-routes-express": "^3.0.4",
+    "swagger-routes-express": "^3.0.5",
     "swagger-ui-express": "^4.1.2",
     "traverse-folders": "^1.1.0",
     "yamljs": "^0.3.0"
@@ -66,8 +66,8 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^3.0.8",
-    "lint-staged": "^9.4.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "mocha": "^6.2.1",
     "mock-req-res": "^1.1.2",
     "nyc": "^14.1.1",
