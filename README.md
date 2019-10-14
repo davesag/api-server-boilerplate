@@ -17,6 +17,7 @@ If it's running locally (see below) point a browser at any of the following rout
 - [localhost:8282](http://127.0.0.1:8282)
 - [localhost:8282/ping](http://127.0.0.1:8282/ping)
 - [localhost:8282/api/v1/hello/some name](http://127.0.0.1:8282/api/v1/hello/some%20name)
+- [localhost:8282/api/v1/snooze](http://127.0.0.1:8282/api/v1/snooze)
 
 and see the API docs at
 
@@ -28,7 +29,7 @@ I write a lot of APIs and have distilled my current best-practice into this code
 
 ## What do you do with it?
 
-Just clone it or fork it, nuke the existing `.git` data and replace with your own `git init` and `git flow init` edit the `README.md` file, add your own details to `api.yml` and add routes to `src/api/` as you like.
+This is a GitHUb Template so either click the ['use this template'](https://github.com/davesag/api-server-boilerplate/generate) button above, or clone this rep, or fork it, nuke the existing `.git` data and replace with your own `git init` and `git flow init` edit the `README.md` file, add your own details to `api.yml` and add routes to `src/api/` as you like.
 
 ## What's included?
 
