@@ -2,9 +2,21 @@
   "name": "@davesag/api-server-boilerplate",
   "version": "1.0.8",
   "description": "Dave Sag's boilerplate code for a swagger based API server",
+  "author": "Dave Sag <davesag@gmail.com>",
+  "type": "commonjs",
+  "license": "MIT",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/davesag"
+  },
+  "private": true,
   "main": "index.js",
   "engines": {
     "node": ">= 8.10.0"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
   },
   "scripts": {
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
@@ -26,11 +38,9 @@
     "server",
     "boilerplate"
   ],
-  "author": "Dave Sag <davesag@gmail.com>",
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davesag/api-server-boilerplate.git"
+    "url": "https://github.com/davesag/api-server-boilerplate.git"
   },
   "bugs": {
     "url": "https://github.com/davesag/api-server-boilerplate/issues"
@@ -77,11 +87,21 @@
     "sinon-chai": "^3.3.0",
     "supertest": "^4.0.2"
   },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "proseWrap": "never"
+  },
   "lint-staged": {
     "**/*.{js,json,md}": [
       "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "nyc": {
     "check-coverage": true,
@@ -103,18 +123,5 @@
     ],
     "all": true,
     "cache": true
-  },
-  "greenkeeper": {
-    "ignore": []
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "proseWrap": "never"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
