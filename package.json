@@ -1,6 +1,6 @@
 {
   "name": "@davesag/api-server-boilerplate",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Dave Sag's boilerplate code for a swagger based API server",
   "author": "Dave Sag <davesag@gmail.com>",
   "type": "commonjs",
