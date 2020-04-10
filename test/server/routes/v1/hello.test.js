@@ -14,9 +14,7 @@ describe('GET /api/v1/hello/:name', () => {
     const expected = `"hello ${name}"`
 
     it('returns the expected value with status code 200', async () =>
-      request(server)
-        .get(`/api/v1/hello/${name}`)
-        .expect(200, expected))
+      request(server).get(`/api/v1/hello/${name}`).expect(200, expected))
   })
 
   context('given an invalid name', () => {

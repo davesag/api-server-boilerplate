@@ -9,7 +9,5 @@ describe('GET /api/v1/snooze', () => {
   })
 
   it('returns status code 200', async () =>
-    request(server)
-      .get('/api/v1/snooze')
-      .expect(200))
+    request(server).get('/api/v1/snooze').expect(200))
 })
