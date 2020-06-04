@@ -29,7 +29,7 @@ I write a lot of APIs and have distilled my current best-practice into this code
 
 ## What do you do with it?
 
-This is a GitHUb Template so either click the ['use this template'](https://github.com/davesag/api-server-boilerplate/generate) button above, or clone this rep, or fork it, nuke the existing `.git` data and replace with your own `git init` and `git flow init` edit the `README.md` file, add your own details to `api.yml` and add routes to `src/api/` as you like.
+This is a GitHub Template so either click the ['use this template'](https://github.com/davesag/api-server-boilerplate/generate) button above, or clone this rep, or fork it, nuke the existing `.git` data and replace with your own `git init` and `git flow init` edit the `README.md` file, add your own details to `api.yml` and add routes to `src/api/` as you like.
 
 ## What's included?
 
