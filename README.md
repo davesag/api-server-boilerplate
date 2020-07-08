@@ -46,12 +46,14 @@ This is a GitHub Template so either click the ['use this template'](https://gith
 
   - `src/api/v1/snooze`
 
-- automatic linking of swagger paths to controllers using [`swagger-routes-express`](https://github.com/davesag/swagger-routes-express) and [`traverse-folders`](https://github.com/davesag/traverse-folders)
+- automatic construction of api controller routes using [`traverse-folders`](https://github.com/davesag/traverse-folders)
+- automatic linking of swagger paths to controllers using [`swagger-routes-express`](https://github.com/davesag/swagger-routes-express)
+- request and response validation using [`express-openapi-validator`](https://github.com/cdimascio/express-openapi-validator)
 - automatic generation of API docs using [`swagger-ui-express`](https://github.com/scottie1984/swagger-ui-express)
 - simple logging (swap out the code in `src/utils/logger` to add your own)
 - standardised [`node-http-error`](https://github.com/carsondarling/node-http-error) and [`http-status-codes`](https://github.com/prettymuchbryce/http-status-codes) and simple `generic` and `notFound` error handlers
-- the swagger editor as an easy to invoke docker image
 - [`dotenv`](https://github.com/motdotla/dotenv) support
+- the swagger editor as an easy to invoke docker image
 
 ### Code quality
 
@@ -68,7 +70,7 @@ This is a GitHub Template so either click the ['use this template'](https://gith
 - code quality using [`eslint`](https://eslint.org) and [`prettier`](https://prettier.io)
 - mutation testing with [`stryker-mutator`](https://stryker-mutator.io)
 - [`circleci`](https://circleci.com) integration
-- [`greenkeeper`](https://greenkeeper.io) integration
+- [`snyk`](https://snyk.io) integration
 
 ## What's not included?
 
