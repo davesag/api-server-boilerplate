@@ -3,6 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const swaggerUi = require('swagger-ui-express')
 const { connector } = require('swagger-routes-express')
+const { OpenApiValidator } = require('express-openapi-validator')
 
 const api = require('src/api')
 const { apiDefinition } = require('src/utils/api/apiDetails')
@@ -20,6 +21,13 @@ const makeApp = async () => {
 
   app.set('trust proxy', true) // needed to get the requesting ip
   // add any other middlewares here
+  const validator = new OpenApiValidator({
+    apiSpec: apiDefinition,
+    validateResponses: true
+  })
+  // do this before connecting the api routes.
+  await validator.install(app)
+
   connect(app) // apply the routes
 
   app.use(notFoundError)
