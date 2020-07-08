@@ -7,7 +7,7 @@ const sleep = duration =>
   })
 
 const snooze = async (req, res) => {
-  await sleep(100)
+  await sleep(10)
   res.end()
 }
 
