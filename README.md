@@ -46,12 +46,14 @@ This is a GitHub Template so either click the ['use this template'](https://gith
 
   - `src/api/v1/snooze`
 
-- automatic linking of swagger paths to controllers using [`swagger-routes-express`](https://github.com/davesag/swagger-routes-express) and [`traverse-folders`](https://github.com/davesag/traverse-folders)
+- automatic construction of api controller routes using [`traverse-folders`](https://github.com/davesag/traverse-folders)
+- automatic linking of swagger paths to controllers using [`swagger-routes-express`](https://github.com/davesag/swagger-routes-express)
+- request and response validation using [`express-openapi-validator`](https://github.com/cdimascio/express-openapi-validator)
 - automatic generation of API docs using [`swagger-ui-express`](https://github.com/scottie1984/swagger-ui-express)
 - simple logging (swap out the code in `src/utils/logger` to add your own)
 - standardised [`node-http-error`](https://github.com/carsondarling/node-http-error) and [`http-status-codes`](https://github.com/prettymuchbryce/http-status-codes) and simple `generic` and `notFound` error handlers
-- the swagger editor as an easy to invoke docker image
 - [`dotenv`](https://github.com/motdotla/dotenv) support
+- the swagger editor as an easy to invoke docker image
 
 ### Code quality
 
@@ -68,7 +70,7 @@ This is a GitHub Template so either click the ['use this template'](https://gith
 - code quality using [`eslint`](https://eslint.org) and [`prettier`](https://prettier.io)
 - mutation testing with [`stryker-mutator`](https://stryker-mutator.io)
 - [`circleci`](https://circleci.com) integration
-- [`greenkeeper`](https://greenkeeper.io) integration
+- [`snyk`](https://snyk.io) integration
 
 ## What's not included?
 
@@ -83,19 +85,17 @@ I've paired this right back to the simplest, most generic API I could, so there'
 
 ## Development
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/davesag/api-server-boilerplate.svg)](https://greenkeeper.io/)
-
 ### Branches
 
 <!-- prettier-ignore -->
-| Branch | Tests | Code Coverage | Comments |
-| ------ | ----- | ------------- | -------- |
-| `develop` | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Work in progress |
-| `master`  | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | Latest Production Release |
+| Branch | Tests | Code Coverage | Audit | Comments |
+| ------ | ----- | ------------- | ----- | -------- |
+| `develop` | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/develop) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/develop/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | [![Vulnerabilities](https://snyk.io/test/github/davesag/api-server-boilerplate/develop/badge.svg)](https://snyk.io/test/github/davesag/api-server-boilerplate/develop) | Work in progress |
+| `master`  | [![CircleCI](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/api-server-boilerplate/tree/master) | [![codecov](https://codecov.io/gh/davesag/api-server-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/davesag/api-server-boilerplate) | [![Vulnerabilities](https://snyk.io/test/github/davesag/api-server-boilerplate/master/badge.svg)](https://snyk.io/test/github/davesag/api-server-boilerplate/master) | Latest Production Release |
 
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), version 12.13.0 (LTS) or better. (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+- [NodeJS](htps://nodejs.org), version 12.18.2 (LTS) or better. (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 - [Docker](https://www.docker.com) if you want to use the Swagger Editor. (Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the `homebrew` version)
 
 ### To build and run locally

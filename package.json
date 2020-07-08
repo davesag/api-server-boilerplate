@@ -1,6 +1,6 @@
 {
   "name": "@davesag/api-server-boilerplate",
-  "version": "1.0.12",
+  "version": "1.1.0",
   "description": "Boilerplate code for a swagger based API server",
   "author": "Dave Sag <davesag@gmail.com>",
   "type": "commonjs",
@@ -28,7 +28,8 @@
     "test:unit": "NODE_ENV=test NODE_PATH=. mocha ./test/unit/ --require ./test/unitTestHelper.js --recursive",
     "test:unit:cov": "NODE_ENV=test NODE_PATH=. nyc mocha ./test/unit/ --require ./test/unitTestHelper.js --recursive",
     "test:server": "NODE_ENV=test NODE_PATH=. mocha ./test/server/ --require ./test/serverTestHelper.js --file ./test/serverTestInit.js --recursive ",
-    "test:mutants": "NODE_ENV=test NODE_PATH=. npx stryker run"
+    "test:mutants": "NODE_ENV=test NODE_PATH=. npx stryker run",
+    "snyk-protect": "snyk protect"
   },
   "keywords": [
     "swagger",
@@ -51,40 +52,42 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-openapi-validator": "^3.16.4",
     "http-status-codes": "^1.4.0",
     "node-http-error": "^2.0.0",
     "route-async": "^1.0.7",
-    "swagger-routes-express": "^3.1.3",
+    "swagger-routes-express": "^3.2.1",
     "swagger-ui-express": "^4.1.4",
     "traverse-folders": "^1.1.2",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "@stryker-mutator/core": "^3.2.4",
-    "@stryker-mutator/javascript-mutator": "^3.2.4",
-    "@stryker-mutator/mocha-framework": "^3.2.4",
-    "@stryker-mutator/mocha-runner": "^3.2.4",
+    "@stryker-mutator/core": "^3.3.1",
+    "@stryker-mutator/javascript-mutator": "^3.3.1",
+    "@stryker-mutator/mocha-framework": "^3.3.1",
+    "@stryker-mutator/mocha-runner": "^3.3.1",
     "chai": "^4.2.0",
     "chai-almost": "^1.0.1",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^7.1.0",
+    "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-mocha": "^7.0.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.8",
-    "mocha": "^7.2.0",
+    "lint-staged": "^10.2.11",
+    "mocha": "^8.0.1",
     "mock-req-res": "^1.2.0",
     "nyc": "^15.1.0",
     "prettier": "^2.0.5",
     "proxyquire": "^2.1.3",
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
+    "snyk": "^1.360.0",
     "supertest": "^4.0.2"
   },
   "prettier": {
@@ -124,5 +127,6 @@
     ],
     "all": true,
     "cache": true
-  }
+  },
+  "snyk": true
 }
