@@ -26,12 +26,15 @@ describe('src/utils/makeApp', () => {
   })
   const fakeUI = 'some UI thing'
   const mockUiExpress = { setup: stub().returns(fakeUI), serve: stub() }
+  class OpenApiValidator {}
+  OpenApiValidator.prototype.install = stub().resolves()
 
   const makeApp = proxyquire('src/utils/makeApp', {
     express: fakeExpress,
     cors: mockCors,
     'body-parser': fakeBodyParser,
     'swagger-routes-express': { connector },
+    'express-openapi-validator': { OpenApiValidator },
     'swagger-ui-express': mockUiExpress,
     'src/utils/notFoundError': fakeNotFoundError,
     'src/utils/api/apiDetails': apiDetails,
