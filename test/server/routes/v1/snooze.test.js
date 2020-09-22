@@ -8,6 +8,5 @@ describe('GET /api/v1/snooze', () => {
     server = serverCache.get()
   })
 
-  it('returns status code 200', async () =>
-    request(server).get('/api/v1/snooze').expect(200))
+  it('returns status code 200', async () => request(server).get('/api/v1/snooze').expect(200))
 })
