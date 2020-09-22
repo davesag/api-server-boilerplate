@@ -22,8 +22,6 @@ describe('GET /api/v1/hello/:name', () => {
     const expected = JSON.stringify({ error: `${name} is not a valid name.` })
 
     it('returns the expected error message and status code BAD_REQUEST', async () =>
-      request(server)
-        .get(`/api/v1/hello/${name}`)
-        .expect(BAD_REQUEST, expected))
+      request(server).get(`/api/v1/hello/${name}`).expect(BAD_REQUEST, expected))
   })
 })
