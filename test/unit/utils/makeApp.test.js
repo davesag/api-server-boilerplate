@@ -11,8 +11,7 @@ describe('src/utils/makeApp', () => {
   const fakeErrorHandler = 'errorHandler'
 
   const apiDetails = {
-    apiDefinition: { test: 'just a test' },
-    '@noCallThru': true
+    apiDefinition: { test: 'just a test' }
   }
   const mockConnect = spy()
   const connector = () => mockConnect
@@ -26,15 +25,17 @@ describe('src/utils/makeApp', () => {
   })
   const fakeUI = 'some UI thing'
   const mockUiExpress = { setup: stub().returns(fakeUI), serve: stub() }
-  class OpenApiValidator {}
-  OpenApiValidator.prototype.install = stub().resolves()
+  const oapim = stub()
+  const OpenApiValidator = {
+    middleware: stub().returns(oapim)
+  }
 
   const makeApp = proxyquire('src/utils/makeApp', {
     express: fakeExpress,
     cors: mockCors,
     'body-parser': fakeBodyParser,
     'swagger-routes-express': { connector },
-    'express-openapi-validator': { OpenApiValidator },
+    'express-openapi-validator': OpenApiValidator,
     'swagger-ui-express': mockUiExpress,
     'src/utils/notFoundError': fakeNotFoundError,
     'src/utils/api/apiDetails': apiDetails,
