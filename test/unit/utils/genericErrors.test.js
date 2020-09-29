@@ -66,7 +66,7 @@ describe('src/utils/genericErrors', () => {
       })
 
       it('calls res.json with the error message', () => {
-        expect(res.json).to.have.been.calledWith({ error: error.message })
+        expect(res.json).to.have.been.calledWith({ error: error.message, errors: error.errors })
       })
     })
 
@@ -89,7 +89,7 @@ describe('src/utils/genericErrors', () => {
       })
 
       it('calls res.json with the error message', () => {
-        expect(res.json).to.have.been.calledWith({ error: error.message })
+        expect(res.json).to.have.been.calledWith({ error: error.message, errors: error.errors })
       })
     })
 
@@ -116,7 +116,8 @@ describe('src/utils/genericErrors', () => {
 
       it('calls res.json with the error message', () => {
         expect(res.json).to.have.been.calledWith({
-          error: genericError.message
+          error: genericError.message,
+          errors: genericError.errors
         })
       })
     })

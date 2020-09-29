@@ -9,7 +9,7 @@ const genericErrors = (err, req, res, next) => {
   const { status = INTERNAL_SERVER_ERROR } = err
 
   logger.error(ERRORS.GENERIC_ERROR(path), err.message)
-  res.status(status).json({ error: err.message })
+  res.status(status).json({ error: err.message, errors: err.errors })
 }
 
 module.exports = genericErrors
