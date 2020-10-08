@@ -1,6 +1,6 @@
 # api-server-boilerplate
 
-A stripped down API boilerplate built around NodeJS and Swagger V3.
+A stripped down API boilerplate built around NodeJS and OpenAPI (Swagger) V3.
 
 ## Configuration
 
