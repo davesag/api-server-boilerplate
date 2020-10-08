@@ -62,3 +62,6 @@ typings/
 
 # macOS Desktop files
 .DS_Store
+
+# VS Code files
+.vscode/

@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Dave's Boilerplate API
+  title: Dave Sag's Boilerplate API
   description: A boilerplate API codebase
   contact:
     email: 'davesag@gmail.com'
