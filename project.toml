@@ -1,0 +1,37 @@
+[project]
+id = "api-server-boilerplate"
+name = "API Server Boilerplate"
+version = "1.2.2"
+authors = [
+    "Dave Sag"
+]
+documentation_url = "https://github.com/davesag/api-server-boilerplate#README"
+source_url = "https://github.com/davesag/api-server-boilerplate"
+licences = [
+    "MIT"
+]
+
+[build]
+include = [
+    "src/",
+    "index.js",
+    "api.yml",
+    "package.json",
+    "package-lock.json"
+]
+
+[[build.buildpacks]]
+id = "heroku/nodejs-engine"
+version = "0.4.4"
+
+[[build.buildpacks]]
+id = "heroku/nodejs-npm"
+version = "0.2.0"
+
+[[build.buildpacks]]
+id = "heroku/procfile"
+version = "0.5"
+
+[[build.env]]
+name = 'PORT'
+value = '8282'
