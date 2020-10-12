@@ -54,6 +54,7 @@ This is a GitHub Template so either click the ['use this template'](https://gith
 - standardised [`node-http-error`](https://github.com/carsondarling/node-http-error) and [`http-status-codes`](https://github.com/prettymuchbryce/http-status-codes) and simple `generic` and `notFound` error handlers
 - [`dotenv`](https://github.com/motdotla/dotenv) support
 - the swagger editor as an easy to invoke docker image
+- simple `project.toml` [buildpacks](https://buildpacks.io) config.
 
 ### Code quality
 
@@ -95,8 +96,9 @@ I've paired this right back to the simplest, most generic API I could, so there'
 
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), version 12.18.4 (LTS) or better. (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
-- [Docker](https://www.docker.com) if you want to use the Swagger Editor. (Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the `homebrew` version)
+- [NodeJS](htps://nodejs.org), version 12.19.0 (LTS) or better. I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.
+- [Docker](https://www.docker.com) if you want to use the Swagger Editor, or you wish to use a `buildpack`. Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the `homebrew` version.
+- [Pack](https://buildpacks.io) to use `buildpacks` — `brew install buildpacks/tap/pack`
 
 ### To build and run locally
 
@@ -112,6 +114,17 @@ You can then go to [localhost:8282/docs](http://127.0.0.1:8282/docs) to see the 
 ### `.env` file
 
 You can put environment variables in a `.env` file.
+
+### Buildpacks.
+
+You can use an `heroku buildpack` as follows:
+
+```sh
+pack build api-server-boilerplate --builder heroku/buildpacks:18
+docker run api-server-boilerplate
+```
+
+Or tweak the `project.toml` file to use whatever buildpacks and environment variables you wish.
 
 ### Development Helpers
 
