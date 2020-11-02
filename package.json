@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@stryker-mutator/core": "^4.0.0",
-    "@stryker-mutator/mocha-runner": "^4.0.0",
+    "@stryker-mutator/mocha-runner": "^4.1.0",
     "chai": "^4.2.0",
     "chai-almost": "^1.0.1",
     "chai-as-promised": "^7.1.1",
