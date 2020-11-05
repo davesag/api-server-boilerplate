@@ -69,7 +69,6 @@ This is a GitHub Template so either click the ['use this template'](https://gith
 - 100% unit test coverage using [`nyc`](https://github.com/istanbuljs/nyc)
 - integration testing using [`supertest`](https://github.com/visionmedia/supertest)
 - code quality using [`eslint`](https://eslint.org) and [`prettier`](https://prettier.io)
-- mutation testing with [`stryker-mutator`](https://stryker-mutator.io)
 - [`circleci`](https://circleci.com) integration
 - [`snyk`](https://snyk.io) integration
 
@@ -96,7 +95,7 @@ I've paired this right back to the simplest, most generic API I could, so there'
 
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), stick to version 14.15.0 for now (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.) The `package-lock.json` file format changed between v6 and v7 of `npm` and npm 7 causes all manner of dramas.
+- [NodeJS](htps://nodejs.org), 15.0.1+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.) You must use npm version 7.0.8 or better.
 - [Docker](https://www.docker.com) if you want to use the Swagger Editor, or you wish to use a `buildpack`. Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the `homebrew` version.
 - [Pack](https://buildpacks.io) to use `buildpacks` — `brew install buildpacks/tap/pack`
 
@@ -141,7 +140,6 @@ Copy and paste the `api.yml` file into the editor to edit it.
 - `npm run lint` will lint it
 - `npm run prettier` will prettify it
 - `npm run test:unit:cov` will run the unit tests with code coverage
-- `npm run test:mutants` will run the unit tests with mutation testing
 
 ## Contributing
 
