@@ -95,7 +95,7 @@ I've paired this right back to the simplest, most generic API I could, so there'
 
 ### Prerequisites
 
-- [NodeJS](htps://nodejs.org), 15.1.0+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.) You must use npm version 7.0.8 or better.
+- [NodeJS](htps://nodejs.org), I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.
 - [Docker](https://www.docker.com) if you want to use the Swagger Editor, or you wish to use a `buildpack`. Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the `homebrew` version.
 - [Pack](https://buildpacks.io) to use `buildpacks` — `brew install buildpacks/tap/pack`
 
