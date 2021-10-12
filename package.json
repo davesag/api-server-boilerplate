@@ -51,7 +51,7 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-openapi-validator": "^4.12.7",
+    "express-openapi-validator": "^4.13.2",
     "http-status-codes": "^2.1.4",
     "node-http-error": "^2.0.0",
     "route-async": "^1.0.7",
