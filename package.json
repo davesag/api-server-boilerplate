@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "@snyk/protect": "^1.981.0",
-    "chai": "^4.3.6",
+    "chai": "^4.3.7",
     "chai-almost": "^1.0.1",
     "chai-as-promised": "^7.1.1",
     "eslint": "^8.20.0",
