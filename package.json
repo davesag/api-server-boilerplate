@@ -52,7 +52,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.1",
     "express-openapi-validator": "^5.0.6",
-    "http-status-codes": "^2.1.4",
+    "http-status-codes": "^2.3.0",
     "node-http-error": "^2.0.0",
     "route-async": "^1.0.8",
     "swagger-routes-express": "^3.3.2",
