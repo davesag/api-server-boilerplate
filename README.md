@@ -2,6 +2,12 @@
 
 A stripped down API boilerplate built around NodeJS and OpenAPI (Swagger) V3.
 
+## ARCHIVED
+
+This code is quite old now and does not support the very latest versions of Express.
+
+There's not much need for it any longer so I am archiving it.
+
 ## Configuration
 
 Set the following environment variables
@@ -25,7 +31,7 @@ and see the API docs at
 
 ## What's the point of this?
 
-I write a lot of APIs and have distilled my current best-practice into this codebase to save myself time, and as example code for other developers wondering how to do this sort of stuff.
+I used to write a lot of APIs and distilled my then best-practice into this codebase to save myself time, and as example code for other developers wondering how to do this sort of stuff.
 
 ## What do you do with it?
 
